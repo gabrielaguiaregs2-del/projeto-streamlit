@@ -1,11 +1,19 @@
 import streamlit as st
 import random
 
-st.header('Jogando uma moeda')
+# Título do App
+st.title('🪙 Simulador de Lançamento de Moeda')
 
-# Adicionando um botão interativo
+st.write('Este é um aplicativo para testar a sorte!')
+
+# Criando um botão
 if st.button('Lançar Moeda'):
     resultado = random.choice(['Cara', 'Coroa'])
-    st.success(f'O resultado é: {resultado}')
+    if resultado == 'Cara':
+        st.success(f'Resultado: **{resultado}**! ✨')
+    else:
+        st.warning(f'Resultado: **{resultado}**! 🎲')
+    
+    st.balloons() # Isso joga balões na tela quando clica!
 else:
-    st.info('Clique no botão acima para tentar a sorte!')
+    st.info('Clique no botão para jogar.')
